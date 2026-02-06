@@ -88,6 +88,25 @@ overflow: hidden;}
     margin: 30px,0;
 
 }
+#b {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(3, 11, 246, 0.5);
+  border: 2px solid rgba(251, 255, 0, 0.6);
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
 
 .t{
 background: rgba(255,0,255,0.3) ;
@@ -113,6 +132,8 @@ background: rgba(255,0,255,0.3) ;
     <img src="https://media.tenor.com/_tQ_u67amRwAAAAm/cat-kitty.webp" class="fgif gif2" >
     <img src="https://media.tenor.com/sP07jP4PehMAAAA1/lirili-larila-italian-brainrot.webp" class="fgif gif3" >
     <img src="https://media.tenor.com/QmBx4mHX8bIAAAAi/khanh2k6.gif" class="fgif gif4" >
+      <button id="b">⏸</button>
+
     <div class="main">
         <H1 class="SPIN">
             67 !BRAIN ROT CENTER! 67
@@ -169,8 +190,18 @@ background: rgba(255,0,255,0.3) ;
     </div>
     
     <script>
+        const b = document.getElementById("b");
+const audio = document.getElementById("67");    
+b.addEventListener("click", () => {
+  if (audio.paused) {
+    audio.play();
+    b.textContent = "⏸";
+  } else {
+    audio.pause();
+    b.textContent = "▶";
+  }
+});
         try {
-            const audio = document.getElementById('67');
             if (audio) {
                 audio.playbackRate = 1.5;
             }
